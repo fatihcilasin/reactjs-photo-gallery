@@ -1,0 +1,71 @@
+$primary-color: #20232a;
+
+nav{
+  background-color: #20232a !important;
+}
+
+.loader {
+  border: 8px solid #f3f3f3;
+  border-top: 8px solid $primary-color;
+  border-radius: 50%;
+  width: 80px;
+  height: 80px;
+  animation: spin 2s linear infinite;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.container{
+  max-width: 900px !important;
+}
+
+.image{
+  width: 100%;
+  height: 180px;
+  position: relative;
+  display: block;
+  img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+  }
+}
+
+.navigation{
+  margin: 0 auto;
+  text-align: center;
+  a{
+    margin-right: 8px;
+  }
+}
+
+.card{
+  .card-img-top{
+    height: 180px;
+    object-fit: cover;
+  }
+
+  &.card-image{
+    transition: .3s ease-in-out;
+    &:hover{
+      transform: translateY(-10px);
+    }
+  }
+}
+
+.btn-dark{
+  background-color: $primary-color;
+}
