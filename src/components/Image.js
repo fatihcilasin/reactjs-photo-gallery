@@ -12,7 +12,7 @@ function Image({url, title, id}){
                            <small className="text-muted"><strong>Title: {title}</strong></small>
                        </div>
                        <div className="col-sm-12 col-md-4 text-right">
-                          <FavoriteButton/>
+                          <FavoriteButton id={id}/>
                        </div>
                    </div>
                 </div>

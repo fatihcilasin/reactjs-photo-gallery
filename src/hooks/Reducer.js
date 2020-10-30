@@ -10,6 +10,17 @@ const Reducer = (state, action) => {
                 ...state,
                 images: action.payload,
             }
+        case 'ADD_FAVORITE':
+            return {
+                ...state,
+                favorites: [...state.favorites, action.payload]
+            }
+
+        case 'REMOVE_FAVORITE':
+            return {
+                ...state,
+                favorites: [...state.favorites.filter( fav => { return fav !== action.payload } )]
+            }
     }
 };
 
