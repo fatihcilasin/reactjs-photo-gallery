@@ -1,16 +1,16 @@
 import React, {useContext, useState} from 'react';
 import {Context} from "../hooks/Store";
 
-function FavoriteButton({id, isFavorited = false}){
+function FavoriteButton({image}){
     const [state, dispatch] = useContext(Context);
-    const [favorited, setFavorited] = useState(false);
 
-    let selected = state.favorites.indexOf(id) >= 0;
+    //let selected = state.favorites.indexOf(image.id) >= 0;
+    let selected = state.favorites.map(function (item) {return item.id;}).indexOf(image.id) >= 0;
     function toggleFavorite(){
         if(!selected)
-            dispatch({type: 'ADD_FAVORITE', payload: id});
+            dispatch({type: 'ADD_FAVORITE', payload: image});
         else
-            dispatch({type: 'REMOVE_FAVORITE', payload: id});
+            dispatch({type: 'REMOVE_FAVORITE', payload: image});
     }
 
     return (

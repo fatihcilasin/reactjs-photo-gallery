@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useContext } from 'react';
 import { Context } from '../hooks/Store';
 import Image from './Image';
 import Loader from './Loader';
@@ -15,7 +15,14 @@ const Gallery = props => {
                     state.images.map(image => {
                         let url = `https://farm${image.farm}.staticflickr.com/${image.server}/${image.id}_${image.secret}_m.jpg`;
 
-                        return <Image url={url} key={image.id} title={image.title} id={image.id} />
+                        return <Image key={image.id} image={{
+                            title: image.title,
+                            url: url,
+                            farm: image.farm,
+                            server: image.server,
+                            secret: image.secret,
+                            id: image.id
+                        }} />
                     })
                 }
             </div>

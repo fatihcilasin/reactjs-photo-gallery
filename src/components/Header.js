@@ -1,4 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import { Context } from '../hooks/Store';
 import axios from 'axios';
 import {FLICKR_API_KEY} from "../config";
@@ -29,7 +30,12 @@ function Header(){
         <div>
             <nav className="navbar navbar-expand-lg navbar-dark">
                 <div className="container">
-                    <a className="navbar-brand" href="javascript:;">ReactJS Photo Gallery</a>
+                    <Link to="/" className="navbar-brand">ReactJS Photo Gallery</Link>
+                    <ul className="navbar-nav ml-auto mr-3">
+                        <li className="nav-item">
+                            <Link to="/favorites" className="nav-link">Favorites</Link>
+                        </li>
+                    </ul>
                     <form className="form-inline my-2 my-lg-0" onSubmit={(e) => e.preventDefault()}>
                         <input className="form-control mr-sm-2" type="search" placeholder="Search" onChange={(e) => setSearch(e.target.value)} />
                     </form>
