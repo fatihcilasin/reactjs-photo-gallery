@@ -4,6 +4,8 @@ import Reducer from './Reducer'
 const initialState = {
     images: [],
     favorites: [],
+    selectedImage: [],
+    toggleImageModal: [],
     loading: true
 };
 

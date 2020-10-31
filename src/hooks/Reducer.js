@@ -10,6 +10,16 @@ const Reducer = (state, action) => {
                 ...state,
                 images: action.payload,
             }
+        case 'TOGGLE_IMAGE_MODAL':
+            return {
+                ...state,
+                showImageModal: action.payload,
+            }
+        case 'UPDATE_SELECTED_IMAGE':
+            return {
+                ...state,
+                selectedImage: action.payload,
+            }
         case 'ADD_FAVORITE':
             return {
                 ...state,

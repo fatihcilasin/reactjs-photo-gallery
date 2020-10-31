@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { Context } from '../hooks/Store';
 import axios from 'axios';
 import {FLICKR_API_KEY} from "../config";
+import ImageModal from "./ImageModal";
 
 function Header(){
     const [state, dispatch] = useContext(Context);
@@ -28,6 +29,10 @@ function Header(){
 
     return (
         <div>
+            <div className={ state.showImageModal ? "modal-backdrop fade show" : "modal-backdrop" }>
+
+            </div>
+            <ImageModal/>
             <nav className="navbar navbar-expand-lg navbar-dark">
                 <div className="container">
                     <Link to="/" className="navbar-brand">ReactJS Photo Gallery</Link>

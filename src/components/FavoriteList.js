@@ -4,7 +4,6 @@ import Image from "./Image";
 
 const FavoriteList = props =>{
     const [state] = useContext(Context);
-    console.log(state.favorites);
     return (
         <div className="container">
             <div className="row favorite-list">
