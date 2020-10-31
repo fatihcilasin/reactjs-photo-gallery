@@ -20,6 +20,11 @@ const Reducer = (state, action) => {
                 ...state,
                 selectedImage: action.payload,
             }
+        case 'SET_FAVORITES':
+            return {
+                ...state,
+                favorites: action.payload
+            }
         case 'ADD_FAVORITE':
             return {
                 ...state,

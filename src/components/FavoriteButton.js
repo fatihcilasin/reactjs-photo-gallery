@@ -11,6 +11,8 @@ function FavoriteButton({image}){
             dispatch({type: 'ADD_FAVORITE', payload: image});
         else
             dispatch({type: 'REMOVE_FAVORITE', payload: image});
+
+        localStorage.setItem('favorites', JSON.stringify(state.favorites));
     }
 
     return (

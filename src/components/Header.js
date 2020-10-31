@@ -10,7 +10,12 @@ function Header(){
     const [search, setSearch] = useState('Sport Car');
     useEffect(() => {
         runSearch()
-    }, [search])
+    }, [search]);
+
+    useEffect(() => {
+        let payloadFavorites = localStorage.getItem('favorites') !== null ? JSON.parse(localStorage.getItem('favorites')) : [];
+        dispatch({type: 'SET_FAVORITES', payload: payloadFavorites});
+    }, []);
 
     async function runSearch(){
         if(search === '' || search.length < 3) return;
