@@ -8,14 +8,15 @@ import ImageModal from "./ImageModal";
 function Header(){
     const [state, dispatch] = useContext(Context);
     const [search, setSearch] = useState('Sport Car');
-    useEffect(() => {
-        runSearch()
-    }, [search]);
 
     useEffect(() => {
         let payloadFavorites = localStorage.getItem('favorites') !== null ? JSON.parse(localStorage.getItem('favorites')) : [];
         dispatch({type: 'SET_FAVORITES', payload: payloadFavorites});
     }, []);
+
+    useEffect(() => {
+        runSearch()
+    }, [search]);
 
     async function runSearch(){
         if(search === '' || search.length < 3) return;

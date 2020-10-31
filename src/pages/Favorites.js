@@ -5,7 +5,6 @@ import FavoriteList from "../components/FavoriteList";
 function Favorites(){
     return (
         <div className="favorites">
-            <Header/>
             <FavoriteList/>
         </div>
     )

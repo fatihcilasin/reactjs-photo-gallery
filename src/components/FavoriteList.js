@@ -3,7 +3,7 @@ import { Context } from "../hooks/Store";
 import Image from "./Image";
 
 const FavoriteList = props =>{
-    const [state, dispatch] = useContext(Context);
+    const [state] = useContext(Context);
 
     return (
         <div className="container">
