@@ -44,7 +44,7 @@ function Header(){
                     <Link to="/" className="navbar-brand">ReactJS Photo Gallery</Link>
                     <ul className="navbar-nav ml-auto mr-3">
                         <li className="nav-item">
-                            <Link to="/favorites" className="nav-link">Favorites</Link>
+                            <Link to="/favorites" className="nav-link">Favorites <span className="badge badge-light">{state.favorites.length}</span></Link>
                         </li>
                     </ul>
                     <form className="form-inline my-2 my-lg-0" onSubmit={(e) => e.preventDefault()}>
